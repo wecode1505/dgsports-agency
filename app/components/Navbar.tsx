@@ -1,28 +1,34 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname(); // Knows which page you are on
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/60 border-b border-slate-200/50 shadow-sm"
+      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 border-b-4 border-black shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-2xl font-black tracking-tighter text-slate-800">
-          DG SPORT <span className="text-orange-500 font-medium">India</span>
-        </div>
+        <Link href="/" className="text-3xl font-black tracking-tighter text-black uppercase flex items-center gap-2">
+          DG SPORT <span className="text-red-600 font-bold">India</span>
+        </Link>
         
-        <div className="hidden md:flex gap-8 text-sm font-bold text-slate-600">
-          <a href="#home" className="hover:text-orange-500 transition-colors">Home</a>
-          <a href="#equipment" className="hover:text-orange-500 transition-colors">Equipment</a>
-          <a href="#apparel" className="hover:text-orange-500 transition-colors">Apparel</a>
+        <div className="hidden md:flex gap-8 text-sm font-black uppercase tracking-widest text-black">
+          <Link href="/" className={`hover:text-red-600 transition-colors ${pathname === '/' ? 'text-red-600 border-b-2 border-red-600' : ''}`}>Home</Link>
+          <Link href="/products" className={`hover:text-red-600 transition-colors ${pathname === '/products' ? 'text-red-600 border-b-2 border-red-600' : ''}`}>Gear</Link>
+          <Link href="/contact" className={`hover:text-red-600 transition-colors ${pathname === '/contact' ? 'text-red-600 border-b-2 border-red-600' : ''}`}>Contact</Link>
         </div>
 
-        <button className="bg-slate-900 hover:bg-orange-500 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-orange-500/30">
-          Shop Now
-        </button>
+        <Link href="/products">
+          <button className="bg-red-600 hover:bg-black text-white px-8 py-3 rounded-none text-sm font-black uppercase tracking-widest transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1">
+            Shop Now
+          </button>
+        </Link>
       </div>
     </motion.nav>
   );

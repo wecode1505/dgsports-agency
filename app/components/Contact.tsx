@@ -1,99 +1,35 @@
 "use client";
-import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <section id="contact" className="py-24 bg-slate-50 relative overflow-hidden">
-      {/* Soft background glow */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-[100px] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="bg-white rounded-[40px] p-10 md:p-16 border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.02)] grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* Left Side: Contact Info & CTA */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight uppercase mb-6">
-              Ready to <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-teal-400">
-                Equip Your Gym?
-              </span>
-            </h2>
-            <p className="text-slate-500 text-lg mb-8 font-medium">
-              Whether you need a single premium treadmill or a complete commercial gym setup, our team is ready to deliver. 
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-600 text-xl">
-                  📞
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Call Us</p>
-                  <p className="text-slate-900 font-bold text-lg">+91 98765 43210</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 text-xl">
-                  📍
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Showroom</p>
-                  <p className="text-slate-900 font-bold text-lg">Phagwara, Punjab</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Side: The Form */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-slate-50 rounded-3xl p-8 border border-slate-100"
-          >
-            <form className="space-y-5">
-              <div className="grid grid-cols-2 gap-5">
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">First Name</label>
-                  <input type="text" className="bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all text-slate-900 font-medium" placeholder="John" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Last Name</label>
-                  <input type="text" className="bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all text-slate-900 font-medium" placeholder="Doe" />
-                </div>
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Email Address</label>
-                <input type="email" className="bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all text-slate-900 font-medium" placeholder="john@example.com" />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Inquiry Type</label>
-                <select className="bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all text-slate-900 font-medium appearance-none">
-                  <option>Bulk Order (Gym Setup)</option>
-                  <option>Individual Equipment</option>
-                  <option>Apparel Customization</option>
-                </select>
-              </div>
-
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full mt-4 bg-slate-900 hover:bg-orange-500 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all uppercase tracking-widest text-sm"
-              >
-                Request Quote
-              </motion.button>
-            </form>
-          </motion.div>
+    <main className="bg-zinc-950 min-h-screen text-white">
+      <Navbar />
+      <div className="max-w-7xl mx-auto px-6 pt-40 pb-24 grid md:grid-cols-2 gap-16">
+        <div>
+          <h1 className="text-6xl font-black uppercase tracking-tighter mb-8 border-l-8 border-red-600 pl-6">
+            Join The <span className="text-red-600">Dojo</span>
+          </h1>
+          <p className="text-gray-400 font-bold text-lg mb-12">
+            Looking to equip your academy with WT-approved gear? Fill out the form for bulk orders and championship setups.
+          </p>
+          <div className="bg-red-600 p-8 border-4 border-white shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]">
+            <h3 className="text-3xl font-black uppercase mb-4 text-white">HQ Details</h3>
+            <p className="font-bold text-lg mb-2 text-white">📍 Delhi NCR, India</p>
+            <p className="font-bold text-lg text-white">📞 +91-8743050087</p>
+          </div>
         </div>
+
+        <form className="bg-white p-8 border-4 border-black shadow-[16px_16px_0px_0px_rgba(220,38,38,1)] text-black flex flex-col gap-6">
+          <h2 className="text-3xl font-black uppercase mb-4 border-b-4 border-black pb-4">Inquiry Form</h2>
+          <input type="text" placeholder="ACADEMY NAME" className="border-4 border-black p-4 font-bold uppercase focus:outline-none focus:border-red-600 bg-zinc-50" />
+          <input type="email" placeholder="EMAIL ADDRESS" className="border-4 border-black p-4 font-bold uppercase focus:outline-none focus:border-red-600 bg-zinc-50" />
+          <textarea rows={4} placeholder="WHAT GEAR DO YOU NEED?" className="border-4 border-black p-4 font-bold uppercase focus:outline-none focus:border-red-600 bg-zinc-50"></textarea>
+          <button type="button" className="bg-black text-white font-black uppercase p-6 hover:bg-red-600 transition-colors tracking-widest text-xl mt-4">
+            Send Message
+          </button>
+        </form>
       </div>
-    </section>
+    </main>
   );
 }
