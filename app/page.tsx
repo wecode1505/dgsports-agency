@@ -4,7 +4,6 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
-  // Pro 3D Parallax Mouse Tracking for the Hero Card
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-300, 300], [15, -15]);
@@ -34,24 +33,26 @@ export default function Home() {
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-600/10 blur-[150px] rounded-full pointer-events-none z-0" />
 
       {/* =========================================
-          SECTION 1: THE HERO (Fixed Responsiveness)
+          SECTION 1: THE HERO (100% Responsive Fix)
           ========================================= */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 z-10 w-full">
-        {/* Changed to lg:grid-cols-2 so it stacks cleanly on laptops/tablets */}
-        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+        {/* Changed to xl:grid-cols-2 so it stacks on laptops to prevent overlap */}
+        <div className="max-w-7xl mx-auto w-full grid xl:grid-cols-2 gap-16 xl:gap-8 items-center">
           
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-start">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-start w-full min-w-0">
             <div className="inline-flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wider text-zinc-400 mb-6">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" /> 
               Next-Gen Martial Arts Production
             </div>
-            {/* Text scales down on smaller screens to prevent overflow */}
-            <h1 className="text-5xl md:text-7xl xl:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-white">
+            
+            {/* Dynamic Font Scaling added here */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 2xl:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-white w-full">
               ELITE <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-white break-words">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-white block truncate md:overflow-visible">
                 PERFORMANCE.
               </span>
             </h1>
+            
             <p className="text-zinc-400 text-base md:text-lg mt-6 max-w-lg font-medium leading-relaxed">
               Engineered for champions. Explore high-performance Taekwondo Doboks, premium impact protection, and custom infrastructure ecosystems.
             </p>
@@ -97,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* =========================================
-          SECTION 2: ABOUT THE BRAND (Scroll Down)
+          SECTION 2: ABOUT THE BRAND
           ========================================= */}
       <section className="relative py-32 px-6 z-10 border-t border-zinc-800/50 bg-gradient-to-b from-transparent to-zinc-950/80">
         <div className="max-w-7xl mx-auto">
@@ -106,20 +107,20 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="grid md:grid-cols-2 gap-16 items-center"
+            className="grid lg:grid-cols-2 gap-16 items-center"
           >
-            <div className="order-2 md:order-1 relative">
+            <div className="order-2 lg:order-1 relative flex justify-center">
               <div className="absolute inset-0 bg-red-600/20 blur-[100px] rounded-full" />
               <img 
                 src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?q=80&w=800" 
                 alt="Dojo Mats" 
-                className="relative z-10 rounded-[32px] border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                className="relative z-10 rounded-[32px] border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full max-w-md object-cover"
               />
             </div>
             
-            <div className="order-1 md:order-2">
+            <div className="order-1 lg:order-2">
               <span className="text-red-500 font-bold tracking-[0.3em] text-xs uppercase">Forged in Delhi NCR</span>
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-4 mb-6">
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-4 mb-6 text-white">
                 LEADING MANUFACTURER <br />
                 <span className="text-zinc-500">SINCE 2017.</span>
               </h2>
@@ -147,7 +148,7 @@ export default function Home() {
       <section className="relative py-32 px-6 z-10 border-t border-zinc-800/50">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-red-500 font-bold tracking-[0.3em] text-xs uppercase">The DG Advantage</span>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-4 mb-16 text-white">
             CHAMPIONSHIP <span className="text-zinc-500">GRADE</span>
           </h2>
 
