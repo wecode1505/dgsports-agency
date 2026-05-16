@@ -15,7 +15,7 @@ export default function Navbar() {
     >
       <div className="px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-black tracking-widest text-white uppercase bg-gradient-to-r from-white via-zinc-400 to-red-500 bg-clip-text text-transparent">
-          DG.SPORT<span className="text-red-500 font-light">//PRO</span>
+          DG SPORT<span className="text-red-500 font-light">DEMO</span>
         </Link>
         
         <div className="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400">

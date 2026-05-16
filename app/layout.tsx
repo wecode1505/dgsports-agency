@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DG SPORT INDIA",
+  title: "DG SPORT INDIA DEMO ",
   description: "CREATED BY WECODE",
 };
 
