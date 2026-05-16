@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const pathname = usePathname(); // Knows which page you are on
+  const pathname = usePathname();
 
   return (
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 border-b-4 border-black shadow-sm"
+      className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/90 border-b-4 border-black shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-3xl font-black tracking-tighter text-black uppercase flex items-center gap-2">

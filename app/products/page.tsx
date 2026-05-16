@@ -33,7 +33,7 @@ export default function ProductsPage() {
               <div className="w-full h-72 bg-black overflow-hidden relative border-2 border-black">
                 <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 grayscale group-hover:grayscale-0" />
                 {product.tag && (
-                  <span className="absolute top-4 left-4 bg-red-600 text-white font-black uppercase tracking-widest px-4 py-2 text-xs">
+                  <span className="absolute top-4 left-4 bg-red-600 text-white font-black uppercase tracking-widest px-4 py-2 text-xs z-20">
                     {product.tag}
                   </span>
                 )}

@@ -8,7 +8,7 @@ export default function Home() {
     <main className="relative bg-white text-black min-h-screen overflow-hidden selection:bg-red-600 selection:text-white">
       <Navbar />
       
-      {/* Dynamic Background */}
+      {/* Dynamic Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-5 pointer-events-none bg-[radial-gradient(circle_at_center,_black_1px,_transparent_1px)] [background-size:24px_24px]"></div>
 
       <section className="relative min-h-screen flex items-center justify-center pt-24 px-6 z-10">
@@ -34,7 +34,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* 3D Floating Black Belt Concept */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative flex justify-center">
             <motion.div
               animate={{ y: [-20, 20, -20], rotateZ: [-2, 2, -2] }}
